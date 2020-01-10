@@ -1,8 +1,7 @@
-require "top50singers/cli/version"
-
-module Top50Singers
-  module Cli
-    class Error < StandardError; end
-    # Your code goes here...
+class Top50singers::CLI
+  
+  def call
+    puts "Here's a list of singers!"
   end
-end
+  
+end 

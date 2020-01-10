@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Type '$ Top50singers' in the terminal to start the program, then follow the instructions provided. Have fun!!
+Type "$ Top50singers "in the terminal to start the program, then follow the instructions provided. Have fun!!
 
 ## Development
 

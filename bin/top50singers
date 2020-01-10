@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require './lib/top50singers'
 
-puts "Hello World!"
+Top50singers::CLI.new.call
 
