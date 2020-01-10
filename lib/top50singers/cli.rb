@@ -5,9 +5,11 @@ class Top50singers::CLI
     puts <<-DOC.gsub /^\s*/, ''
     
       Hello!
-      You are now looking at a directory of Best Singers...
-      OF ALL TIME SWAY!!! (Kanye West voice)
+      You are now about to take a look at a directory of Best Singers...
     DOC
+    sleep 4
+    puts "OF ALL TIME SWAY!!! (Kanye West voice)"
+    sleep 2
     puts ""
     puts ""
     
