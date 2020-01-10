@@ -1,6 +1,6 @@
 # Top50singers::Cli
 
-Welcome to my gem "Top 50 Singers"! This Ruby Gem provides a CLI to view a list of the top 50 singers that ever lived and give a bit of information about their background. This list was currated by the Rolling Stone, a highly revered music news website.
+Welcome to my gem "Top 50 Singers"! This Ruby Gem provides a CLI to view a list of the top 50 singers that ever lived and gives a bit of information about their background. This list was currated by the Rolling Stone, a highly revered music news website.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type '$ Top50singers' in the terminal to start the program, then follow the instructions provided. Have fun!!
 
 ## Development
 
