@@ -16,8 +16,7 @@ class Top50singers::CLI
     
     
     yes_or_no
-    user_input_2
-    finish
+    # user_input_2
   end
   
   def yes_or_no
@@ -28,7 +27,8 @@ class Top50singers::CLI
       input = gets.strip.downcase
       if input == "yes"
         list_of_singers
-      elsif input == "no"
+      elsif input == "no" || "exit"
+        input = "exit"
         finish
      else
         puts "Invalid entry. Please enter yes or no"
@@ -50,15 +50,20 @@ class Top50singers::CLI
   end 
   
   
-  def user_input_2
-    input = nil
-    puts "Enter a number 1-50 to see more details on that Singer:"
-    puts "Enter "
-  end 
+  # def user_input_2
+  #   input = nil
+  #   puts "Enter a number 1-50 to see more details on that Singer:"
+  #   puts "Enter "
+  # end 
   
   
   def finish
     puts "Thank you for using my directory!!!"
+    sleep 1.5
+    puts "Run the program again if you happen to change your mind."
+    sleep 1.5
+    puts "See you later!!!"
+  
   end
   
 end 
