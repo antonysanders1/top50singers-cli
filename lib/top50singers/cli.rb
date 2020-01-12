@@ -26,11 +26,12 @@ class Top50singers::CLI
     input = nil 
     while input != "exit"
       input = gets.strip.downcase
-      case input
-      when "yes"
+      if input == "yes"
         list_of_singers
-      when "no"
+      elsif input == "no"
         finish
+     else
+        puts "Invalid entry. Please enter yes or no"
       end 
     end
   end 
