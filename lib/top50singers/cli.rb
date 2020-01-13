@@ -38,14 +38,16 @@ class Top50singers::CLI
   
   
   def list_of_singers
-    puts <<-DOC.gsub /^\s*/, ''
+    # puts <<-DOC.gsub /^\s*/, ''
     
-      1
-      2 
-      3 
-      4 
-      5
-    DOC
+    #   1
+    #   2 
+    #   3 
+    #   4 
+    #   5
+    # DOC
+    
+    @artists = Top50singers::Artist.all 
     
   end 
   
