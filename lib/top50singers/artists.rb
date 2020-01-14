@@ -1,14 +1,15 @@
 class Top50singers::Artist 
 
-attr_accessible :name, :description
+attr_accessor :name, :description
 
   def self.all 
-    
+    #binding.pry
     art_1 = self.new 
     art_1.name = "Beyonce"
     art_1.description = "I am a singer"
-    
-    [art_1]
+    array = []
+    array << art_1
+    array
     
   end 
 

@@ -1,4 +1,6 @@
+#require_relative './top50singers/artist'
 #This is my CLI Controller
+require 'pry'
 class Top50singers::CLI
   
   def call
@@ -13,7 +15,7 @@ class Top50singers::CLI
     puts ""
     puts ""
     
-    
+  
     
     yes_or_no
     # user_input_2
@@ -38,16 +40,10 @@ class Top50singers::CLI
   
   
   def list_of_singers
-    # puts <<-DOC.gsub /^\s*/, ''
-    
-    #   1
-    #   2 
-    #   3 
-    #   4 
-    #   5
-    # DOC
-    
-    @artists = Top50singers::Artist.all 
+    @artists = Top50singers::Artist.all
+    @artists.each do |artist|
+      puts "#{artist.name}"
+    end 
     
   end 
   

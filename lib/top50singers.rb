@@ -6,4 +6,6 @@ require_relative "./top50singers/cli/version"
 #   end
 # end
 require_relative 'top50singers/cli'
+require_relative 'top50singers/artists'
+
 
