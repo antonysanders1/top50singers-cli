@@ -41,18 +41,33 @@ class Top50singers::CLI
   
   def list_of_singers
     @artists = Top50singers::Artist.all
-    @artists.each do |artist|
-      puts "#{artist.name}"
+    
+    @artists.each.with_index do |artist, i|
+      puts "#{i}. #{artist.name}"
     end 
+    
+    user_input_2
     
   end 
   
   
-  # def user_input_2
-  #   input = nil
-  #   puts "Enter a number 1-50 to see more details on that Singer:"
-  #   puts "Enter "
-  # end 
+   def user_input_2
+  
+     input = nil
+     puts "Enter a number 1-25 to see more details on that Artist:"
+     while input != "exit"
+      input = gets.strip.downcase
+      if input.to_i > 0
+        puts @artists[input.to_i - 1].name
+        
+      elsif input == "no" || "exit"
+        input = "exit"
+        finish
+     else
+        puts "Invalid entry. Please enter yes or no"
+      end 
+    end
+   end 
   
   
   def finish
