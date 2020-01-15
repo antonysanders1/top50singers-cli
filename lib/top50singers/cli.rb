@@ -15,56 +15,61 @@ class Top50singers::CLI
     puts ""
     puts ""
     
-  
-    
     yes_or_no
-    # user_input_2
+    #finish
   end
   
+  
+  
   def yes_or_no
-    puts "Would you like to see a list of the top 50 Singers?"
+    puts "Would you like to see a list of the top 35 Artists?"
     puts "Enter: yes / no"
     input = nil 
-    while input != "exit"
       input = gets.strip.downcase
       if input == "yes"
         list_of_singers
-      elsif input == "no" || "exit"
-        input = "exit"
+      elsif input == "no" || input == "exit"
+      
         finish
      else
         puts "Invalid entry. Please enter yes or no"
       end 
-    end
+    #end
   end 
   
   
+  
   def list_of_singers
-    @artists = Top50singers::Artist.all
+    @artists = Top50singers::Artist.scrape
     
-    @artists.each.with_index do |artist, i|
-      puts "#{i}. #{artist.name}"
+    @artists.name.each.with_index(1) do |artist, i|
+      puts "#{i}. #{artist}"
     end 
-    
+  
     user_input_2
     
   end 
   
   
-   def user_input_2
+  
+  def user_input_2
   
      input = nil
-     puts "Enter a number 1-25 to see more details on that Artist:"
+     puts "Enter a number 1-35 to see more details on that Artist:"
      while input != "exit"
       input = gets.strip.downcase
       if input.to_i > 0
-        puts @artists[input.to_i - 1].name
-        
-      elsif input == "no" || "exit"
-        input = "exit"
+        puts @artists.name[input.to_i - 1]
+        puts ""
+        sleep 1.5
+        puts @artists.about[input.to_i - 1]
+        sleep 3
+        puts "Want to see another artist? Enter another number: 1-35"
+        puts "Finished? Enter: 'exit'"
+      elsif  input == "exit"
         finish
      else
-        puts "Invalid entry. Please enter yes or no"
+        puts "Invalid entry."
       end 
     end
    end 
@@ -76,6 +81,7 @@ class Top50singers::CLI
     puts "Run the program again if you happen to change your mind."
     sleep 1.5
     puts "See you later!!!"
+    input = "exit"
   
   end
   
