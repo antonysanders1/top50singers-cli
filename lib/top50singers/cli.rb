@@ -6,10 +6,12 @@ class Top50singers::CLI
   def call
     puts <<-DOC.gsub /^\s*/, ''
     
-      Hello!
-      You are now about to take a look at a directory of Best Singers...
+      Greetings!
+      So, Negan is a music and movie buff who created a list of his favorite Actor/Musicians..
     DOC
     sleep 4
+    puts "He believes their the best..."
+    sleep 1
     puts "OF ALL TIME SWAY!!! (Kanye West voice)"
     sleep 2
     puts ""
@@ -22,7 +24,7 @@ class Top50singers::CLI
   
   
   def yes_or_no
-    puts "Would you like to see a list of the top 35 Artists?"
+    puts "Would you like to see the list of his top 35 Actor/Musicians?"
     puts "Enter: yes / no"
     input = nil 
       input = gets.strip.downcase
@@ -64,6 +66,8 @@ class Top50singers::CLI
         sleep 1.5
         puts @artists.about[input.to_i - 1]
         sleep 3
+        puts ""
+        puts ""
         puts "Want to see another artist? Enter another number: 1-35"
         puts "Finished? Enter: 'exit'"
       elsif  input == "exit"
