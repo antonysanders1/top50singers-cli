@@ -24,19 +24,22 @@ class Top50singers::CLI
   
   
   def yes_or_no
-    puts "Would you like to see the list of his top 35 Actor/Musicians?"
+    puts "Would you like to see the list of his top Actor/Musicians?"
     puts "Enter: yes / no"
+    puts ""
     input = nil 
       input = gets.strip.downcase
       if input == "yes"
+        puts ""
         list_of_singers
       elsif input == "no" || input == "exit"
-      
+        puts "Avaialble numbers: 1 - #{@artists.name.length}"
         finish
      else
+        puts "Avaialble numbers: 1 - #{@artists.name.length}"
         puts "Invalid entry. Please enter yes or no"
       end 
-    #end
+
   end 
   
   
@@ -57,7 +60,10 @@ class Top50singers::CLI
   def user_input_2
   
      input = nil
-     puts "Enter a number 1-35 to see more details on that Artist:"
+     puts ""
+     puts "Enter a number from the list to see more details on that Artist:"
+     puts "Avaialble numbers: 1 - #{@artists.name.length}"
+     puts ""
      while input != "exit"
       input = gets.strip.downcase
       if input.to_i > 0 &&  input.to_i < @artists.name.length
@@ -68,12 +74,18 @@ class Top50singers::CLI
         sleep 3
         puts ""
         puts ""
-        puts "Want to see another artist? Enter another number: 1-35"
+        puts "Want to see another artist? Enter another available number:"
+        puts "Avaialble numbers: 1 - #{@artists.name.length}"
         puts "Finished? Enter: 'exit'"
+        puts ""
       elsif  input == "exit"
+        puts ""
         finish
+        puts ""
      else
-        puts "Invalid entry."
+       puts ""
+       puts "Invalid entry."
+       puts ""
       end 
     end
    end 
