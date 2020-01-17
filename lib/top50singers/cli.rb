@@ -60,7 +60,7 @@ class Top50singers::CLI
      puts "Enter a number 1-35 to see more details on that Artist:"
      while input != "exit"
       input = gets.strip.downcase
-      if input.to_i > 0
+      if input.to_i > 0 &&  input.to_i < @artists.name.length
         puts @artists.name[input.to_i - 1]
         puts ""
         sleep 1.5

@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-require 'pry'
+gem 'pry'
 require 'nokogiri'
 
 
