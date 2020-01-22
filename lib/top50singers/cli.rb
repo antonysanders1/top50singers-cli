@@ -32,11 +32,11 @@ class Top50singers::CLI
       if input == "yes"
         puts ""
         list_of_singers
-      elsif input == "no" || input == "exit"
-        puts "Avaialble numbers: 1 - #{@artists.name.length}"
+      elsif input != "yes" || input == "exit"
+        #puts "Avaialble numbers: 1 - #{@artists.name.length}"
         finish
      else
-        puts "Avaialble numbers: 1 - #{@artists.name.length}"
+        #puts "Avaialble numbers: 1 - #{@artists.name.length}"
         puts "Invalid entry. Please enter yes or no"
       end 
 
@@ -45,10 +45,11 @@ class Top50singers::CLI
   
   
   def list_of_singers
-    @artists = Top50singers::Artist.scrape
+    Top50singers::Scraper.scrape
+    @artists = Top50singers::Artist.all
     
-    @artists.name.each.with_index(1) do |artist, i|
-      puts "#{i}. #{artist}"
+    @artists.each.with_index(1) do |artist, i|
+      puts "#{i}. #{artist.name}"
     end 
   
     user_input_2
@@ -62,20 +63,19 @@ class Top50singers::CLI
      input = nil
      puts ""
      puts "Enter a number from the list to see more details on that Artist:"
-     puts "Avaialble numbers: 1 - #{@artists.name.length}"
+     puts "Avaialble numbers: 1 - #{@artists.length}"
      puts ""
      while input != "exit"
       input = gets.strip.downcase
-      if input.to_i > 0 &&  input.to_i < @artists.name.length
-        puts @artists.name[input.to_i - 1]
-        puts ""
+      if input.to_i > 0 &&  input.to_i < @artists.length
+        puts @artists[input.to_i - 1].name
         sleep 1.5
-        puts @artists.about[input.to_i - 1]
+        puts @artists[input.to_i - 1].about
         sleep 3
         puts ""
         puts ""
         puts "Want to see another artist? Enter another available number:"
-        puts "Avaialble numbers: 1 - #{@artists.name.length}"
+        puts "Avaialble numbers: 1 - #{@artists.length}"
         puts "Finished? Enter: 'exit'"
         puts ""
       elsif  input == "exit"

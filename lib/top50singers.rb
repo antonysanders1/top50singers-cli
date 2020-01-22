@@ -6,5 +6,6 @@ require 'pry'
 require_relative "./top50singers/cli/version"
 require_relative 'top50singers/cli'
 require_relative 'top50singers/artists'
+require_relative 'top50singers/scraper'
 
 
